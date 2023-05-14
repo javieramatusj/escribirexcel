@@ -1,3 +1,4 @@
+ # escribe datos en excel
 import xlsxwriter
 # crea un archivo con un nombre
 archivo= xlsxwriter.Workbook('prueba.xlsx')
@@ -6,5 +7,10 @@ hoja=archivo.add_worksheet()
 # escribe en la hoja fila, columna, argumento
 # fila 1 y columna 1 en excel
 hoja.write(0,0,"hola")
+hoja.write ( 0,1, "como estás")
+datos=[["Santiago","Ramirez","25"], ["perros","papa","pizza","arroz"]]
+for i  in range (len (datos)):
+    for j in range (len (datos[i])):
+        hoja.write(i,j,datos[i][j])
 # cerrar un archivo
 archivo.close()
